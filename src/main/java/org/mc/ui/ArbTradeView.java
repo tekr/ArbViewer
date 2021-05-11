@@ -54,7 +54,12 @@ public class ArbTradeView {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                updateTableData();
+                try {
+                    updateTableData();
+                }
+                catch (Exception e) {
+                    System.err.println(e.getMessage());
+                }
             }
         }, 0, 3000);
     }
